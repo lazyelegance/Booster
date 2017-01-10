@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var welcome: UIButton!
+    
+    @IBAction func welcomeClicked(_ sender: Any) {
+        let containerViewController = ContainerViewController()
+        self.navigationController?.pushViewController(containerViewController, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = blue
+        welcome.backgroundColor = green
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +29,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
 
 }
 
