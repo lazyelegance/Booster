@@ -29,6 +29,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var submit: UIButton!
     
     var questionnaireCompleted = false
+    var applicationSubmitted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +38,21 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableViewRight.constant = -centerPanelExpandedOffset
         
         
-        questionnaire.backgroundColor = questionnaireCompleted ? snow : blue
-        questionnaire.isEnabled = questionnaireCompleted ? false : true
+        
         
         submit.backgroundColor = !questionnaireCompleted ? snow : blue
         submit.isEnabled = !questionnaireCompleted ? false : true
         
+        if questionnaireCompleted {
+            questionnaire.setTitle("Re-take Questionnare", for: .normal)
+        }
+        
+        if applicationSubmitted {
+            submit.setTitle("Submitted", for: .normal)
+            submit.isEnabled = false
+            questionnaire.isEnabled = false
+            questionnaire.backgroundColor = snow
+        }
         
         print("questionnaireCompleted : \(self.questionnaireCompleted)")
 

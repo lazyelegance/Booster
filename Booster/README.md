@@ -10,4 +10,6 @@
 - As mentioned in the docx, one Investor Type is mapped to one Fund
 - As this is a demo objective texts are images are same for all Fund types
 - First two answers of the first are marked as special cases in the link provided (not mentioned in the docx) and are implemented as such
-- Not implemented the validation of Text Fields while submitting user details // too generic
+- Not implemented the validation of Text Fields while submitting user details. too generic
+- After Submission, both Submit and Take Questionnaire buttons are disabled, Submit button text changes to Submitted
+- Tested only on Simulator, not on device

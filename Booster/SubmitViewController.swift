@@ -19,6 +19,7 @@ class SubmitViewController: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var submit: UIButton!
     
+    @IBOutlet weak var done: UIButton!
     @IBOutlet weak var thankYou: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class SubmitViewController: UIViewController {
     @IBAction func submitApplication(_ sender: Any) {
         // validate and implement Submission
         thankYou.alpha = 1
+        done.alpha = 1
         name.alpha = 0
         email.alpha = 0
         phone.alpha = 0
@@ -41,6 +43,12 @@ class SubmitViewController: UIViewController {
         headerLabel.alpha = 0
     }
 
+    @IBAction func backToMain(_ sender: Any) {
+        if let mainViewController = self.navigationController?.viewControllers[0] as? MainViewController {
+            mainViewController.applicationSubmitted = true
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
     /*
     // MARK: - Navigation
 

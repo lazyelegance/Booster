@@ -138,6 +138,23 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAM-pP-Y2g">
+                                <rect key="frame" x="147" y="357" width="82" height="41"/>
+                                <color key="backgroundColor" red="0.78573244809999998" green="0.90246587990000005" blue="0.62309831380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backToMain:" destination="9e5-eB-JcR" eventType="touchUpInside" id="vIA-HM-auj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.079434540979999996" blue="0.13546194480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -145,6 +162,7 @@
                             <constraint firstItem="aPf-Bg-ykh" firstAttribute="trailing" secondItem="1Se-H5-ehJ" secondAttribute="trailing" id="5wu-HF-P7p"/>
                             <constraint firstItem="hFv-At-Mzj" firstAttribute="leading" secondItem="rcI-D9-3hS" secondAttribute="leading" id="BqI-BB-jGB"/>
                             <constraint firstItem="1Se-H5-ehJ" firstAttribute="height" secondItem="hFv-At-Mzj" secondAttribute="height" id="Hoh-QF-JIk"/>
+                            <constraint firstItem="AAM-pP-Y2g" firstAttribute="centerX" secondItem="mGm-lK-rvp" secondAttribute="centerX" id="KqB-yg-oBZ"/>
                             <constraint firstItem="aPf-Bg-ykh" firstAttribute="leading" secondItem="1Se-H5-ehJ" secondAttribute="leading" id="LXC-xY-bDF"/>
                             <constraint firstItem="aPf-Bg-ykh" firstAttribute="top" secondItem="1Se-H5-ehJ" secondAttribute="bottom" constant="5" id="MC3-3n-8zn"/>
                             <constraint firstItem="1Se-H5-ehJ" firstAttribute="leading" secondItem="hFv-At-Mzj" secondAttribute="leading" id="O7d-kL-rf7"/>
@@ -155,6 +173,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hFv-At-Mzj" secondAttribute="trailing" id="YoQ-zQ-eOT"/>
                             <constraint firstItem="1Se-H5-ehJ" firstAttribute="top" secondItem="hFv-At-Mzj" secondAttribute="bottom" constant="5" id="eIw-Gq-jNi"/>
                             <constraint firstItem="hFv-At-Mzj" firstAttribute="top" secondItem="rcI-D9-3hS" secondAttribute="bottom" constant="10" id="hNQ-lK-F9a"/>
+                            <constraint firstItem="AAM-pP-Y2g" firstAttribute="top" secondItem="1Pq-qb-sto" secondAttribute="bottom" constant="8" id="iBT-b2-ShJ"/>
                             <constraint firstItem="1Pq-qb-sto" firstAttribute="top" secondItem="Dvx-90-iuo" secondAttribute="bottom" constant="10" id="j6F-0Z-tSi"/>
                             <constraint firstItem="hFv-At-Mzj" firstAttribute="leading" secondItem="mGm-lK-rvp" secondAttribute="leadingMargin" id="j9j-uU-nt4"/>
                             <constraint firstItem="1Pq-qb-sto" firstAttribute="leading" secondItem="mGm-lK-rvp" secondAttribute="leadingMargin" id="l3z-TG-OLE"/>
@@ -163,6 +182,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="done" destination="AAM-pP-Y2g" id="qpH-6E-9YQ"/>
                         <outlet property="email" destination="1Se-H5-ehJ" id="rm7-yH-B4i"/>
                         <outlet property="headerLabel" destination="rcI-D9-3hS" id="N5B-7w-FQ0"/>
                         <outlet property="name" destination="hFv-At-Mzj" id="U1e-aS-Pl1"/>

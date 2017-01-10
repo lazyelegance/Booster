@@ -23,8 +23,6 @@ class ResultViewController: UIViewController {
             mainViewController.questionnaireCompleted = true
             mainViewController.finalScore = score
             self.navigationController?.popToRootViewController(animated: true)
-        } else {
-            print("Booo")
         }
     }
     

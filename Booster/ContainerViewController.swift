@@ -21,6 +21,7 @@ class ContainerViewController: UIViewController, MainViewControllerDelegate {
     var centerNVC: UINavigationController!
     
     var questionnaireCompleted: Bool!
+    var applicationSubmitted: Bool!
     
     var currentState: SlideOutState = .bothCollapsed {
         didSet {
@@ -57,9 +58,10 @@ class ContainerViewController: UIViewController, MainViewControllerDelegate {
         return UIStatusBarStyle.lightContent
     }
     
-    func toggleLeftPanel(questionnaireCompleted: Bool) {
+    func toggleLeftPanel(questionnaireCompleted: Bool, applicationSubmitted: Bool) {
         
         self.questionnaireCompleted = questionnaireCompleted
+        self.applicationSubmitted = applicationSubmitted
         let leftPanelNotExpanded = (leftPanelState != .leftPanelExpanded)
         
         if leftPanelNotExpanded {
@@ -67,6 +69,7 @@ class ContainerViewController: UIViewController, MainViewControllerDelegate {
             if (leftViewController == nil) {
                 leftViewController = UIStoryboard.leftViewController()
                 leftViewController?.questionnaireCompleted = questionnaireCompleted
+                leftViewController?.applicationSubmitted = applicationSubmitted
                 addChildSidePanelController(leftViewController!)
             }
         }
@@ -140,7 +143,7 @@ class ContainerViewController: UIViewController, MainViewControllerDelegate {
     func collapseSidePanels() {
         
         if leftPanelState == .leftPanelExpanded {
-            toggleLeftPanel(questionnaireCompleted: self.questionnaireCompleted)
+            toggleLeftPanel(questionnaireCompleted: self.questionnaireCompleted, applicationSubmitted: self.applicationSubmitted)
         }
     }
 

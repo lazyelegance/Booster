@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainViewControllerDelegate {
-    func toggleLeftPanel(questionnaireCompleted: Bool)
+    func toggleLeftPanel(questionnaireCompleted: Bool, applicationSubmitted: Bool)
     func collapseSidePanels()
 }
 
@@ -19,6 +19,7 @@ class MainViewController: UIViewController, MenuControllerDelegate {
     var menuExpanded = false
     
     var questionnaireCompleted = false
+    var applicationSubmitted = false
     
     @IBOutlet weak var fundInformation: UILabel!
     @IBOutlet weak var fundTitle: UILabel!
@@ -69,7 +70,7 @@ class MainViewController: UIViewController, MenuControllerDelegate {
     
     @IBAction func showMenu(_ sender: Any) {
         if !menuExpanded {
-            delegate?.toggleLeftPanel(questionnaireCompleted: self.questionnaireCompleted)
+            delegate?.toggleLeftPanel(questionnaireCompleted: self.questionnaireCompleted, applicationSubmitted: self.applicationSubmitted)
         } else {
             delegate?.collapseSidePanels()
         }
